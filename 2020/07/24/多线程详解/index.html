@@ -8,13 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>多线程详解 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="线程三种创建方式： 123451.继承Thread类，重写run()方法，调用start开启线程2.实现Runnable接口,	实现run()方法，编写线程执行体	创建线程对象，调用start()方法启动线程3.实现callable接口  lamda表达式 1231.避免匿名内部类定义过多2.可以让代码看起来简洁3.去掉一些没有意义的代码，只留下核心的逻辑">
+<meta property="og:type" content="article">
 <meta property="og:title" content="多线程详解">
 <meta property="og:url" content="http://yoursite.com/2020/07/24/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="线程三种创建方式： 123451.继承Thread类，重写run()方法，调用start开启线程2.实现Runnable接口,	实现run()方法，编写线程执行体	创建线程对象，调用start()方法启动线程3.实现callable接口  lamda表达式 1231.避免匿名内部类定义过多2.可以让代码看起来简洁3.去掉一些没有意义的代码，只留下核心的逻辑">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-24T03:31:26.569Z">
-<meta property="article:modified_time" content="2020-07-24T03:31:26.569Z">
+<meta property="article:modified_time" content="2020-07-24T06:27:38.341Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -172,7 +174,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h2><p>三种创建方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.继承Thread类，重写run()方法，调用start开启线程</span><br><span class="line">2.实现Runnable接口,</span><br><span class="line">	实现run()方法，编写线程执行体</span><br><span class="line">	创建线程对象，调用start()方法启动线程</span><br><span class="line">3.实现callable接口</span><br></pre></td></tr></table></figure>
+
+<p>lamda表达式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.避免匿名内部类定义过多</span><br><span class="line">2.可以让代码看起来简洁</span><br><span class="line">3.去掉一些没有意义的代码，只留下核心的逻辑</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -264,6 +272,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/07/24/VUE/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          VUE
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/24/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">

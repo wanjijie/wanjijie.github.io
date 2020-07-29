@@ -152,6 +152,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-springCloud" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/springCloud/">springCloud</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/28/springCloud/" class="archive-article-date">
+  	<time datetime="2020-07-28T07:02:16.943Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Springcloud"><a href="#Springcloud" class="headerlink" title="Springcloud"></a>Springcloud</h2><p>Eureka服务注册与发现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Eureka是Netflix的一个子模块，是基于REST的服务，用于定位服务，实现云端中间层服务发现和故障转移。</span><br></pre></td></tr></table></figure>
+
+<p>Eureka三大角色</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.Eureka Server :提供服务的注册于发现。</span><br><span class="line">2.Service Provider ： 将自身服务注册到Eureka中，从而使消费方能够找到</span><br><span class="line">3.Service Consumer：服务消费方从Eureka中获取注册服务列表，从而找到消费者</span><br></pre></td></tr></table></figure>
+
+<p>CAP理论    C（一致性）A（可用性）P（容错性）</p>
+<p>Zookeeper保证的是CP</p>
+<p>Eureka保证的是AP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Eureka可以很好的应对因网络故障导致部分节点失去联系的情况，而不会像zookeeper那样使整个注册服务崩溃</span><br></pre></td></tr></table></figure>
+
+<h3 id="ribbon"><a href="#ribbon" class="headerlink" title="ribbon"></a>ribbon</h3><p>客户端负载均衡的工具</p>
+<p>常用的负载均衡工具：Nginx</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/28/springCloud/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-JavaWeb" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -208,6 +283,49 @@
 <p>用户登录之后，整个网站都可以访问。</p>
 <p>Session和Cookie的区别？</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Cookie把用户的数据写给用户的浏览器，浏览器保存</span><br><span class="line">Session把用户的数据写到用户独占的Session中，服务端保存（保存重要的信息，减少服务器资源的浪费）</span><br><span class="line">Session对象由服务创建</span><br></pre></td></tr></table></figure>
+
+<p>会话自动过期：web.xml配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">设置session默认的失效时间</span><br><span class="line">&lt;session-config&gt;</span><br><span class="line">		5分钟后session自动失效，以分钟为单位</span><br><span class="line">        &lt;session-timeout&gt;1&lt;&#x2F;session-timeout&gt;</span><br><span class="line">    &lt;&#x2F;session-config&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="JavaBean"><a href="#JavaBean" class="headerlink" title="JavaBean"></a>JavaBean</h4><p>实体类</p>
+<p>JavaBean有特定的写法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.必须有一个无参构造</span><br><span class="line">2.属性必须私有化</span><br><span class="line">3.必须有对应的get&#x2F;set方法</span><br><span class="line">一般用来和数据库的字段映射</span><br></pre></td></tr></table></figure>
+
+<h4 id="MVC三层架构"><a href="#MVC三层架构" class="headerlink" title="MVC三层架构"></a>MVC三层架构</h4><p>Model</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">业务处理：业务逻辑（Service）</span><br><span class="line">数据持久层：CURD （dao）</span><br></pre></td></tr></table></figure>
+
+<p>View</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">展示数据</span><br><span class="line">提供链接发起Servlet请求（a,form,img）</span><br></pre></td></tr></table></figure>
+
+<p>Controller(Servlet)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">接收用户的请求：（req:请求参数Session信息）</span><br><span class="line">交给业务层处理对应的代码</span><br><span class="line">控制视图的跳转</span><br></pre></td></tr></table></figure>
+
+<h4 id="Filter-过滤器"><a href="#Filter-过滤器" class="headerlink" title="Filter 过滤器"></a>Filter 过滤器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chain.doFilter(request,response);过滤器继续向下走。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Filter开发步骤</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">1.导包Java servlet</span><br><span class="line">2.编写过滤器(3个方法)</span><br><span class="line">@Override   &#x2F;&#x2F;初始化</span><br><span class="line">    public void init(FilterConfig filterConfig) throws ServletException &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override   &#x2F;&#x2F;销毁</span><br><span class="line">    public void destroy() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">3.在web.xml中配置Filter</span><br><span class="line">&lt;filter&gt;</span><br><span class="line">        &lt;filter-name&gt;&lt;&#x2F;filter-name&gt;</span><br><span class="line">        &lt;filter-class&gt;&lt;&#x2F;filter-class&gt;</span><br><span class="line">    &lt;&#x2F;filter&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;filter-mapping&gt;</span><br><span class="line">        &lt;filter-name&gt;&lt;&#x2F;filter-name&gt;</span><br><span class="line">        &lt;url-pattern&gt;&lt;&#x2F;url-pattern&gt;</span><br><span class="line">    &lt;&#x2F;filter-mapping&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="监听器"><a href="#监听器" class="headerlink" title="监听器"></a>监听器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.编写一个监听器，实现监听器的接口</span><br><span class="line">2.web.xml中注册监听器</span><br><span class="line">&lt;listener&gt;</span><br><span class="line">        &lt;listener-class&gt;&lt;&#x2F;listener-class&gt;</span><br><span class="line">    &lt;&#x2F;listener&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="过滤器、监听器常见应用"><a href="#过滤器、监听器常见应用" class="headerlink" title="过滤器、监听器常见应用"></a>过滤器、监听器常见应用</h4><p>监听器：GUI编程（图形界面编程）中经常使用</p>
+<h4 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h4><p>事务：</p>
+<p>要么都成功，要么都失败</p>
+<p>ACID原则：保证数据安全</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.开启事务</span><br><span class="line">2.事务提交 commit（）</span><br><span class="line">3.事务回滚 rollback（）</span><br><span class="line">4.关闭事务</span><br></pre></td></tr></table></figure>
+
+<p>开启事务：start transaction;</p>
+<p>通知数据库开启事务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connection.setAutoCommit(false);&#x2F;&#x2F;通知数据库开启事务</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
 
 
 

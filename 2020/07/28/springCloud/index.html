@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JavaWeb | Hexo</title>
+  <title>springCloud | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="面试题： 网站是如何进行访问的？12341.输入一个域名，回车2.检查本机的c:\Windows\System32\driverss\etc\hosts配置下有没有这个域名的映射	1有：直接返回对应的IP地址，这个地址中，有我们需要访问的web程序，可以直接访问    例如：www.baidu.com	2.没有：去DNS服务器找，找的的话就返回，找不到就返回找不到.  maven 配置阿里云镜像">
+  <meta name="description" content="SpringcloudEureka服务注册与发现 1Eureka是Netflix的一个子模块，是基于REST的服务，用于定位服务，实现云端中间层服务发现和故障转移。  Eureka三大角色 1231.Eureka Server :提供服务的注册于发现。2.Service Provider ： 将自身服务注册到Eureka中，从而使消费方能够找到3.Service Consumer：服务消费方从Eu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaWeb">
-<meta property="og:url" content="http://yoursite.com/2020/07/27/JavaWeb/index.html">
+<meta property="og:title" content="springCloud">
+<meta property="og:url" content="http://yoursite.com/2020/07/28/springCloud/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="面试题： 网站是如何进行访问的？12341.输入一个域名，回车2.检查本机的c:\Windows\System32\driverss\etc\hosts配置下有没有这个域名的映射	1有：直接返回对应的IP地址，这个地址中，有我们需要访问的web程序，可以直接访问    例如：www.baidu.com	2.没有：去DNS服务器找，找的的话就返回，找不到就返回找不到.  maven 配置阿里云镜像">
+<meta property="og:description" content="SpringcloudEureka服务注册与发现 1Eureka是Netflix的一个子模块，是基于REST的服务，用于定位服务，实现云端中间层服务发现和故障转移。  Eureka三大角色 1231.Eureka Server :提供服务的注册于发现。2.Service Provider ： 将自身服务注册到Eureka中，从而使消费方能够找到3.Service Consumer：服务消费方从Eu">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-27T01:03:38.229Z">
-<meta property="article:modified_time" content="2020-07-28T02:17:32.154Z">
+<meta property="article:published_time" content="2020-07-28T07:02:16.943Z">
+<meta property="article:modified_time" content="2020-07-28T09:27:22.062Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -154,186 +154,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JavaWeb" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-springCloud" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JavaWeb
+      springCloud
     </h1>
   
 
         
-        <a href="/2020/07/27/JavaWeb/" class="archive-article-date">
-  	<time datetime="2020-07-27T01:03:38.229Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-27</time>
+        <a href="/2020/07/28/springCloud/" class="archive-article-date">
+  	<time datetime="2020-07-28T07:02:16.943Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>面试题：</p>
-<h6 id="网站是如何进行访问的？"><a href="#网站是如何进行访问的？" class="headerlink" title="网站是如何进行访问的？"></a>网站是如何进行访问的？</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.输入一个域名，回车</span><br><span class="line">2.检查本机的c:\Windows\System32\driverss\etc\hosts配置下有没有这个域名的映射</span><br><span class="line">	1有：直接返回对应的IP地址，这个地址中，有我们需要访问的web程序，可以直接访问    例如：www.baidu.com</span><br><span class="line">	2.没有：去DNS服务器找，找的的话就返回，找不到就返回找不到.</span><br></pre></td></tr></table></figure>
-
-<p>maven</p>
-<p>配置阿里云镜像</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;mirror&gt;</span><br><span class="line">       &lt;id&gt;nexus-aliyun&lt;&#x2F;id&gt;</span><br><span class="line">       &lt;mirrorOf&gt;central&lt;&#x2F;mirrorOf&gt;</span><br><span class="line">       &lt;name&gt;Nexus aliyun&lt;&#x2F;name&gt;</span><br><span class="line">       &lt;url&gt;http:&#x2F;&#x2F;maven.aliyun.com&#x2F;nexus&#x2F;content&#x2F;groups&#x2F;public&lt;&#x2F;url&gt; </span><br><span class="line">   &lt;&#x2F;mirror&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class HelloServlet extends HttpServlet&#123;</span><br><span class="line">    @Override</span><br><span class="line">    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;</span><br><span class="line">        &#x2F;&#x2F;super.doGet(req, resp);</span><br><span class="line"></span><br><span class="line">        PrintWriter writer &#x3D; resp.getWriter();</span><br><span class="line">        writer.print(&quot;Hello,Servlet&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;</span><br><span class="line">        super.doPost(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>二、编写servlet 的映射</p>
-<p>​    为什么需要映射？—我们写的是Java程序，需要通过浏览器访问，浏览器需要连接web服务器，所以我们在web服务中需要注册servlet，还需要给他一个浏览器可以访问的路径。</p>
-<h6 id="web-xml"><a href="#web-xml" class="headerlink" title="web.xml"></a>web.xml</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt;</span><br><span class="line">        &lt;servlet-name&gt;hello&lt;&#x2F;servlet-name&gt;</span><br><span class="line">        &lt;servlet-class&gt;com.wan.servlet.HelloServlet&lt;&#x2F;servlet-class&gt;</span><br><span class="line">    &lt;&#x2F;servlet&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;servlet-mapping&gt;</span><br><span class="line">        &lt;servlet-name&gt;hello&lt;&#x2F;servlet-name&gt;</span><br><span class="line">        &lt;url-pattern&gt;&#x2F;hello&lt;&#x2F;url-pattern&gt;</span><br><span class="line">    &lt;&#x2F;servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
-
-<p>三、配置Tomcat</p>
-<h6 id="优先级问题"><a href="#优先级问题" class="headerlink" title="优先级问题"></a>优先级问题</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">指定了固有的映射路径优先级最高，如果找不到就会走默认的处理请求。</span><br></pre></td></tr></table></figure>
-
-<h4 id="ServletContext"><a href="#ServletContext" class="headerlink" title="ServletContext"></a>ServletContext</h4><p>web容器启动时，它会为每一个web程序都创建一个对应的ServletContext对象，它代表了 当前的web应用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1.共享数据</span><br><span class="line">	我在这个servlet中保存的数据，可以在另外一个servlet中拿到；</span><br></pre></td></tr></table></figure>
-
-<h4 id="请求转发"><a href="#请求转发" class="headerlink" title="请求转发"></a>请求转发</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ServletContext context &#x3D; this.getServletContext();</span><br><span class="line">        context.getRequestDispatcher(&quot;&#x2F;gp&quot;).forward(req,resp);</span><br></pre></td></tr></table></figure>
-
-<p>如何让浏览器5秒自动刷新一次？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resp.setheader（“refresh”,5）；</span><br></pre></td></tr></table></figure>
-
-<h4 id="实现重定向"><a href="#实现重定向" class="headerlink" title="实现重定向"></a>实现重定向</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">resp.sendRedirect(&quot;&#x2F;gp&quot;);</span><br></pre></td></tr></table></figure>
-
-<p>面试题：重定向和转发的区别？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">相同点：</span><br><span class="line">	页面都实现跳转</span><br><span class="line">不同点：</span><br><span class="line">	1.请求转发的时候，URL不会产生变化</span><br><span class="line">	2.重定向的时候，URL地址栏会发生变化</span><br></pre></td></tr></table></figure>
-
-<h4 id="获取前端传递的参数"><a href="#获取前端传递的参数" class="headerlink" title="获取前端传递的参数"></a>获取前端传递的参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">req.getParameter(String s)---------------String</span><br><span class="line">req.getParameterValues(String s)---------String []</span><br></pre></td></tr></table></figure>
-
-<h4 id="Session-重点"><a href="#Session-重点" class="headerlink" title="Session(重点)"></a>Session(重点)</h4><p>服务器给每一个用户（浏览器）创建一个session对象;</p>
-<p>一个Session独占一个浏览器，只要浏览器没关闭，这个Session就存在</p>
-<p>用户登录之后，整个网站都可以访问。</p>
-<p>Session和Cookie的区别？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Cookie把用户的数据写给用户的浏览器，浏览器保存</span><br><span class="line">Session把用户的数据写到用户独占的Session中，服务端保存（保存重要的信息，减少服务器资源的浪费）</span><br><span class="line">Session对象由服务创建</span><br></pre></td></tr></table></figure>
-
-<p>会话自动过期：web.xml配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">设置session默认的失效时间</span><br><span class="line">&lt;session-config&gt;</span><br><span class="line">		5分钟后session自动失效，以分钟为单位</span><br><span class="line">        &lt;session-timeout&gt;1&lt;&#x2F;session-timeout&gt;</span><br><span class="line">    &lt;&#x2F;session-config&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="JavaBean"><a href="#JavaBean" class="headerlink" title="JavaBean"></a>JavaBean</h4><p>实体类</p>
-<p>JavaBean有特定的写法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.必须有一个无参构造</span><br><span class="line">2.属性必须私有化</span><br><span class="line">3.必须有对应的get&#x2F;set方法</span><br><span class="line">一般用来和数据库的字段映射</span><br></pre></td></tr></table></figure>
-
-<h4 id="MVC三层架构"><a href="#MVC三层架构" class="headerlink" title="MVC三层架构"></a>MVC三层架构</h4><p>Model</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">业务处理：业务逻辑（Service）</span><br><span class="line">数据持久层：CURD （dao）</span><br></pre></td></tr></table></figure>
-
-<p>View</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">展示数据</span><br><span class="line">提供链接发起Servlet请求（a,form,img）</span><br></pre></td></tr></table></figure>
-
-<p>Controller(Servlet)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">接收用户的请求：（req:请求参数Session信息）</span><br><span class="line">交给业务层处理对应的代码</span><br><span class="line">控制视图的跳转</span><br></pre></td></tr></table></figure>
-
-<h4 id="Filter-过滤器"><a href="#Filter-过滤器" class="headerlink" title="Filter 过滤器"></a>Filter 过滤器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chain.doFilter(request,response);过滤器继续向下走。</span><br></pre></td></tr></table></figure>
-
-
-
-<p>Filter开发步骤</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">1.导包Java servlet</span><br><span class="line">2.编写过滤器(3个方法)</span><br><span class="line">@Override   &#x2F;&#x2F;初始化</span><br><span class="line">    public void init(FilterConfig filterConfig) throws ServletException &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override   &#x2F;&#x2F;销毁</span><br><span class="line">    public void destroy() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">3.在web.xml中配置Filter</span><br><span class="line">&lt;filter&gt;</span><br><span class="line">        &lt;filter-name&gt;&lt;&#x2F;filter-name&gt;</span><br><span class="line">        &lt;filter-class&gt;&lt;&#x2F;filter-class&gt;</span><br><span class="line">    &lt;&#x2F;filter&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;filter-mapping&gt;</span><br><span class="line">        &lt;filter-name&gt;&lt;&#x2F;filter-name&gt;</span><br><span class="line">        &lt;url-pattern&gt;&lt;&#x2F;url-pattern&gt;</span><br><span class="line">    &lt;&#x2F;filter-mapping&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="监听器"><a href="#监听器" class="headerlink" title="监听器"></a>监听器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.编写一个监听器，实现监听器的接口</span><br><span class="line">2.web.xml中注册监听器</span><br><span class="line">&lt;listener&gt;</span><br><span class="line">        &lt;listener-class&gt;&lt;&#x2F;listener-class&gt;</span><br><span class="line">    &lt;&#x2F;listener&gt;</span><br></pre></td></tr></table></figure>
-
-<h4 id="过滤器、监听器常见应用"><a href="#过滤器、监听器常见应用" class="headerlink" title="过滤器、监听器常见应用"></a>过滤器、监听器常见应用</h4><p>监听器：GUI编程（图形界面编程）中经常使用</p>
-<h4 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h4><p>事务：</p>
-<p>要么都成功，要么都失败</p>
-<p>ACID原则：保证数据安全</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.开启事务</span><br><span class="line">2.事务提交 commit（）</span><br><span class="line">3.事务回滚 rollback（）</span><br><span class="line">4.关闭事务</span><br></pre></td></tr></table></figure>
-
-<p>开启事务：start transaction;</p>
-<p>通知数据库开启事务</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connection.setAutoCommit(false);&#x2F;&#x2F;通知数据库开启事务</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <h2 id="Springcloud"><a href="#Springcloud" class="headerlink" title="Springcloud"></a>Springcloud</h2><p>Eureka服务注册与发现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Eureka是Netflix的一个子模块，是基于REST的服务，用于定位服务，实现云端中间层服务发现和故障转移。</span><br></pre></td></tr></table></figure>
+
+<p>Eureka三大角色</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.Eureka Server :提供服务的注册于发现。</span><br><span class="line">2.Service Provider ： 将自身服务注册到Eureka中，从而使消费方能够找到</span><br><span class="line">3.Service Consumer：服务消费方从Eureka中获取注册服务列表，从而找到消费者</span><br></pre></td></tr></table></figure>
+
+<p>CAP理论    C（一致性）A（可用性）P（容错性）</p>
+<p>Zookeeper保证的是CP</p>
+<p>Eureka保证的是AP</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Eureka可以很好的应对因网络故障导致部分节点失去联系的情况，而不会像zookeeper那样使整个注册服务崩溃</span><br></pre></td></tr></table></figure>
+
+<h3 id="ribbon"><a href="#ribbon" class="headerlink" title="ribbon"></a>ribbon</h3><p>客户端负载均衡的工具</p>
+<p>常用的负载均衡工具：Nginx</p>
 
       
 
@@ -413,7 +266,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/27/JavaWeb/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/07/28/springCloud/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -427,18 +280,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/07/28/springCloud/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          springCloud
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/24/HTML/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HTML</div>
+    <a href="/2020/07/27/JavaWeb/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaWeb</div>
       <i class="icon-circle-right"></i>
     </a>
   

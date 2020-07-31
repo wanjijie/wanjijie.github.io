@@ -152,6 +152,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-springMVC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/31/springMVC/">springMVC</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/31/springMVC/" class="archive-article-date">
+  	<time datetime="2020-07-31T03:08:03.738Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/31/springMVC/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-spring整合mybatis常见错误" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -292,6 +354,14 @@
 
 <h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><p>使用spring实现AOP</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https:&#x2F;&#x2F;mvnrepository.com&#x2F;artifact&#x2F;org.aspectj&#x2F;aspectjweaver --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.aspectj&lt;&#x2F;groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;aspectjweaver&lt;&#x2F;artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.9.5&lt;&#x2F;version&gt;</span><br><span class="line">&lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="spring开启事务"><a href="#spring开启事务" class="headerlink" title="spring开启事务"></a>spring开启事务</h2><p>配置声明式事务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id&#x3D;&quot;transactionManager&quot; class&#x3D;&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;</span><br><span class="line">        &lt;property name&#x3D;&quot;dataSource&quot; ref&#x3D;&quot;dataSources&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;bean&gt;</span><br></pre></td></tr></table></figure>
+
+<p>结合aop实现事务的织入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--配置事务通知--&gt;</span><br><span class="line">&lt;tx:advice id&#x3D;&quot;txA&quot; transaction-manager&#x3D;&quot;transactionManager&quot;&gt;</span><br><span class="line">		&lt;!--配置事务传播特性--&gt;</span><br><span class="line">        &lt;tx:attributes&gt;</span><br><span class="line">            &lt;tx:method name&#x3D;&quot;add&quot; propagation&#x3D;&quot;REQUIRED&quot;&#x2F;&gt;</span><br><span class="line">            &lt;tx:method name&#x3D;&quot;delete&quot; propagation&#x3D;&quot;REQUIRED&quot;&#x2F;&gt;</span><br><span class="line">            &lt;tx:method name&#x3D;&quot;update&quot; propagation&#x3D;&quot;REQUIRED&quot;&#x2F;&gt;</span><br><span class="line">            &lt;tx:method name&#x3D;&quot;query&quot; read-only&#x3D;&quot;true&quot;&#x2F;&gt;</span><br><span class="line">            &lt;tx:method name&#x3D;&quot;*&quot; propagation&#x3D;&quot;REQUIRED&quot;&#x2F;&gt;</span><br><span class="line">        &lt;&#x2F;tx:attributes&gt;</span><br><span class="line">    &lt;&#x2F;tx:advice&gt;</span><br><span class="line">&lt;!--配置事务切入--&gt;</span><br><span class="line">	&lt;aop:config&gt;</span><br><span class="line">        &lt;aop:pointcut id&#x3D;&quot;txPoint&quot; expression&#x3D;&quot;execution(* com.wan.mapper.*.*(..))&quot;&#x2F;&gt;</span><br><span class="line">        &lt;aop:advisor advice-ref&#x3D;&quot;txA&quot; pointcut-ref&#x3D;&quot;txPoint&quot;&#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;aop:config&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="为什么需要事务？"><a href="#为什么需要事务？" class="headerlink" title="为什么需要事务？"></a>为什么需要事务？</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.如果不配置事务，可能存在数据提交不一致的情况</span><br><span class="line">2.如果我们不在spring中去配置声明式事务，我们需要在代码中手动配置事务</span><br><span class="line">3.事务在项目中十分重要，设计到数据的一致性和完整性，不容马虎</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1160,186 +1230,10 @@
 
 
   
-    <article id="post-day01笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/23/day01%E7%AC%94%E8%AE%B0/">day01笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/23/day01%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-07-23T02:46:27.387Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="工欲善其事必先利其器"><a href="#工欲善其事必先利其器" class="headerlink" title="工欲善其事必先利其器"></a>工欲善其事必先利其器</h1><h4 id="常用的dos命令"><a href="#常用的dos命令" class="headerlink" title="常用的dos命令"></a>常用的dos命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#盘符切换 D:  E:</span><br><span class="line">#查看盘符下的目录 dir</span><br><span class="line">#切换目录 cd</span><br></pre></td></tr></table></figure>
-
-<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><h6 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">byte占一个字节范围：-128 - 127</span><br><span class="line">short占2个字节范围：-32768 - 32767</span><br><span class="line">int占4个字节范围：-2147483648  -  2147483647</span><br><span class="line">long占8个字节范围：-9223372036854775808  - 9223372036854775807</span><br><span class="line">float占4个字节</span><br><span class="line">double占8个字节</span><br><span class="line">boolean占1位其值只有true和false两个</span><br></pre></td></tr></table></figure>
-
-<h5 id="面试题-银行业务用什么表示"><a href="#面试题-银行业务用什么表示" class="headerlink" title="面试题 :银行业务用什么表示"></a>面试题 :银行业务用什么表示</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BigDecimal 数学工具类</span><br></pre></td></tr></table></figure>
-
-<h5 id="Java流程控制——选择结构"><a href="#Java流程控制——选择结构" class="headerlink" title="Java流程控制——选择结构"></a>Java流程控制——选择结构</h5><h6 id="if选择结构"><a href="#if选择结构" class="headerlink" title="if选择结构"></a>if选择结构</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if(布尔表达式1)&#123;</span><br><span class="line"></span><br><span class="line">&#125;else if(尔表达式2)&#123;</span><br><span class="line"></span><br><span class="line">&#125;else if(尔表达式3)&#123;</span><br><span class="line"></span><br><span class="line">&#125;else&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="switch选择结构"><a href="#switch选择结构" class="headerlink" title="switch选择结构"></a>switch选择结构</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">switch()&#123;</span><br><span class="line">	case&quot;:</span><br><span class="line">		break;</span><br><span class="line">	case&quot;:</span><br><span class="line">		break;</span><br><span class="line">	default:</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="Java循环结构"><a href="#Java循环结构" class="headerlink" title="Java循环结构"></a>Java循环结构</h4><h6 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">先判断后执行，不满足条件就不会进入循环</span><br></pre></td></tr></table></figure>
-
-<h6 id="do-…while-循环"><a href="#do-…while-循环" class="headerlink" title="do …while 循环"></a>do …while 循环</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">先执行后 判断，即使不满足条件也会执行一次</span><br><span class="line">do&#123;</span><br><span class="line"></span><br><span class="line">&#125;while(布尔表达式);</span><br></pre></td></tr></table></figure>
-
-<h6 id="for循环"><a href="#for循环" class="headerlink" title="for循环*****"></a>for循环*****</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for()&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h6 id="面试题break-continue"><a href="#面试题break-continue" class="headerlink" title="面试题break  continue"></a>面试题break  continue</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">break用于强行退出循环，不执行循环中剩余的语句</span><br><span class="line">continue用于终止某次循环过程，跳过循环体中尚未执行的语句，接着进行下一次是否执行循环的判断。</span><br></pre></td></tr></table></figure>
-
-<h6 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">递归结构包括两个部分：</span><br><span class="line">	递归头：什么时候不调用自身方法。如果没有头，将陷入死循环。</span><br><span class="line">	递归体：什么时候需要调用自身方法。</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/23/day01%E7%AC%94%E8%AE%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
